@@ -24,7 +24,7 @@
 <div id="rms-wizard" class="rms-wizard">
 
     <div class="sf_bgu">
-	<!--
+
 	<center>
 	<div style="display: block;padding: 20px;">
 		<a href="https://fbftest.strbsu.ru/fbf-test/" style="padding: 10px;">
@@ -32,7 +32,7 @@
 		</a>
 	</div>
     </center>
-	-->
+
         <!--Wizard Container-->        
             <div class="rms-container">
                <!--Wizard Header-->

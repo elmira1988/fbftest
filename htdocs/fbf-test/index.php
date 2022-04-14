@@ -41,12 +41,12 @@
 				</span>
 				<input name='pas' type="password" value='' />
 				<?php
-				if($_GET['test']==true)
-				{
+				/*if($_GET['test']==true)
+				{*/
 				?>
 				<div class='sendsubmit'></div>
 				<?php
-				}
+				/*}*/
 				?>
 			</div>
 			<div class='my_error'>Неверно введены логин/пароль</div>
