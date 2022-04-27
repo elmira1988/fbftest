@@ -26,11 +26,11 @@
     <div class="sf_bgu">
 
 	<center>
-	<div style="display: block;padding: 20px;">
+	<!--<div style="display: block;padding: 20px;">
 		<a href="https://fbftest.strbsu.ru/fbf-test/" style="padding: 10px;">
 			<button style="padding: 5px 10px;">перейти к тестированию</button>
 		</a>
-	</div>
+	</div>-->
     </center>
 
         <!--Wizard Container-->        
@@ -77,12 +77,12 @@
             					<div class="block_inline" style="pointer-events: none;">
             						<input type="checkbox" class="checkradios custom" checked/>
             						<label class="for_checkbox" style="line-height: 22px;">
-            						<p style="line-height: 15px;height: 20px;margin: 0px;position:absolute;">Нажимая кнопку "Далее" я принимаю условия договора публичной оферты оказания услуг по обеспечению участия в научном мероприятии</p>
+            						<p style="line-height: 15px;height: 20px;margin: 0px;position:absolute;padding-left:10px;"> Нажимая кнопку "Далее" я принимаю условия договора публичной оферты оказания услуг по обеспечению участия в научном мероприятии</p>
             						</label>
             					</div>
             				</div>
 							
-                            <span class="next">
+                            <!--<span class="next">
                                 <p onclick="next_step(this)" class="btn">Далее
                                 </p>
                             </span>
@@ -90,7 +90,7 @@
                             <span class="prev" style="visibility:hidden;display:none;">
                                 <p onclick="prev_step(this)" class="btn" style="margin:0px;">Назад
                                 </p>
-                            </span>
+                            </span>-->
                         </div>
                     </div>
                     <!--Wizard Footer Close-->
