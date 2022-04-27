@@ -88,11 +88,11 @@ for ($i=0;$i<count($students);$i++)
 		echo '<td>'.($i+1).'</td>';
 		echo '<td>'.(($payment_online) ? 'онлайн': '<label class="set_payment" title="подвердить/отменить факт оплаты" data-ball="'.$ball.'" data-name="'.$students[$i]['fam'].'  '.$students[$i]['name'].' '.$students[$i]['otch'].'" data-id_students="'.$students[$i]['id_students'].'"><input type="checkbox" '.(($payment) ? 'checked':'').' ><span>чек</span></label>').'</td>';  
 		
-		echo '<td title="id  в базе '.$students[$i]['id_students'].'">'.$students[$i]['fam'].'  '.$students[$i]['name'].'<br/> '.$students[$i]['otch'].'</td>';
+		echo '<td title="id  в базе '.$students[$i]['id_students'].'">'.$students[$i]['fam'].'  '.$students[$i]['name'].' '.$students[$i]['otch'].'</td>';
 		echo '<td><button onclick="get_rec('.$students[$i]['id_students'].')" style="cursor:pointer">квитанция</button></td>';
 		
 		
-		echo '<td>'.$parents[0]['email'].'<br/>'.$students[$i]['tel'].'</td>';
+		echo '<td>'.$parents[0]['email'].'&nbsp;&nbsp;&nbsp;&nbsp;'.$students[$i]['tel'].'</td>';
 		echo '<td>'.$students[$i]['city'].'</td>';
 		echo '<td>'.$students[$i]['school'].'</td>';
 		echo '<td>'.$students[$i]['ruk'].'</td>';
