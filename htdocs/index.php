@@ -10,8 +10,8 @@
     	</div>
     	
     	<div class="header_block" style="width:50%;min-width: 550px;">
-    		<img src="/assets/img/bgu_1.png" style="max-height:70px;">
-    		<span>Стерлитамакский филиал БашГУ</span>	
+    		<img src="/assets/img/uunt_wo_words_2.png" style="max-height:70px;padding: 5px 0px 5px 0px">
+    		<span>Стерлитамакский филиал УУНиТ</span>
     	</div> 
     	
     	<div style="min-width:221px;width:25%;">
@@ -77,12 +77,13 @@
             					<div class="block_inline" style="pointer-events: none;">
             						<input type="checkbox" class="checkradios custom" checked/>
             						<label class="for_checkbox" style="line-height: 22px;">
-            						<p style="line-height: 15px;height: 20px;margin: 0px;position:absolute;padding-left:10px;"> Нажимая кнопку "Далее" я принимаю условия договора публичной оферты оказания услуг по обеспечению участия в научном мероприятии</p>
+            						<p style="line-height: 15px;height: 20px;margin: 0px;position:absolute;padding-left:10px;"> Нажимая кнопку "Далее" я принимаю условия договора публичной оферты оказания услуг
+                                        по обеспечению участия в научном мероприятии</p>
             						</label>
             					</div>
             				</div>
 							
-                            <!--<span class="next">
+                            <span class="next">
                                 <p onclick="next_step(this)" class="btn">Далее
                                 </p>
                             </span>
@@ -90,7 +91,7 @@
                             <span class="prev" style="visibility:hidden;display:none;">
                                 <p onclick="prev_step(this)" class="btn" style="margin:0px;">Назад
                                 </p>
-                            </span>-->
+                            </span>
                         </div>
                     </div>
                     <!--Wizard Footer Close-->
@@ -103,7 +104,7 @@
     <!--Wizard Container Close-->
     <?php include('functions.php');?>
     <div class="footer">
-        ©  <?php echo get_setting()['year']?> Стерлитамакский филиал БашГУ, все права защищены
+        ©  <?php echo get_setting()['year']?> Стерлитамакский филиал УУНиТ, все права защищены
     </div>
 </div>
 <!--Multi Step Wizard Close-->
