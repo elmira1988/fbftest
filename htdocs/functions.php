@@ -176,18 +176,132 @@ function has_answer()//проверяем отвечал ли пользоват
   } 
  }
 
-function make_pdf_rec($data, $save = true){
+function make_pdf_rec($data = false, $save = true){
 
-		$_POST=$data;
-		/*
+    $_POST=$data;
+    /*
+    $_POST['fam']='Саитгараев';
+    $_POST['name']='Ильназ';
+    $_POST['pat']='Наилевич';
+    $_POST['fam_parent']='Татлыбаева';
+    $_POST['name_parent']='Гулькай';
+    $_POST['pat_parent']='Нурисламовна';
+    $_POST['adress']='г.Мелеуз,ул.Акмуллы,16/А';
+*/
+    $html = '
+		<style>
+		body{font-size:10pt;font-family: Times New Roman;}
+		h1{color:black;font-size:10pt;margin:0px;text-align:center;font-weight:normal;line-height:20px;}
+		p{text-indent: 0px;margin-top:5px;margin-bottom:5px;font-size:12pt;}
+		.footer p{text-indent: 0px;}
+		</style>';
+
+    $html.='<table style="width:800px;margin:0 auto; border:1px solid black">';
+    $html.='<tr>';
+    $html.='<td style="vertical-align: top;padding-top:10px;text-align: center;" colspan="3">';
+    $html.='<p style="padding-left: 10px;"><b>УФК по Республике Башкортостан </b></p>';
+    $html.='<p><b>(Стерлитамакский филиал УУНиТ, СФ УУНиТ, л/с  20016НЖУЦ50)</b></p>';
+    $html.='<hr style="margin-bottom: 10px;margin-top:5px;">';
+    $html.='<table style="width: 100%">';
+    $html.='<tr>';
+
+    $html.='<td style="border-bottom: 1px solid black"><span style="margin: 0px;"><b>0274975591</b></span></td>';
+    $html.='<td style="border-bottom: 1px solid black"><span style="margin: 0px;"><b>026843001</b></span></td>';
+    $html.='<td style="border-bottom: 1px solid black"><span style="margin: 0px;"><b>03214643000000010100</b></span></td>';
+
+    $html.='</tr>';
+    $html.='<tr>';
+
+    $html.='<td><span style="margin: 0px;font-size: 9pt;">(ИНН получателя платежа)</span></td>';
+    $html.='<td><span style="margin: 0px;font-size: 9pt;">(КПП получателя платежа)</span></td>';
+    $html.='<td><span style="margin: 0px;font-size: 9pt;">(номер р/счета получателя платежа)</span></td>';
+
+    $html.='</tr>';
+
+    $html.='<tr>';
+
+    $html.='<td style="border-bottom: 1px solid black;" colspan="2"><p>&nbsp;</p><span style="margin: 0px;padding-top: 20px"><b>Отделение-НБ Республика Башкортостан</b></span></td>';
+    $html.='<td style="border-bottom: 1px solid black;"><span style="margin: 0px;"><p>&nbsp;</p><b>018073401</b></span></td>';
+
+    $html.='</tr>';
+    $html.='<tr>';
+
+    $html.='<td  colspan="2"><span style="margin: 0px;font-size: 9pt;">(наименование банка получателя)</span></td>';
+    $html.='<td><span style="margin: 0px;font-size: 9pt;">(БИК)</span></td>';
+
+    $html.='</tr>';
+
+    $html.='<tr>';
+    $html.='<td colspan="3"><b>КБК: 00000000000000000130  ОКТМО: 80745000</b></td>';
+    $html.='</tr>';
+
+    $html.='<tr>';
+    $html.='<td colspan="3">Назначение: <b>Плата за курсы</b></td>';
+    $html.='</tr>';
+
+    $html.='</table>';
+    $html.='<hr style="border: 2px solid black;margin-top: 5px;">';
+    $html.='</td>';
+
+    $html.='<td><img src="assets/img/qr_code.png"></td>';
+    $html.='</tr>';
+
+    $html.='<tr>';
+    $html.='<td style="padding:0px;padding-left: 10px;" colspan="3">Ф.И.О. плательщика: &nbsp;&nbsp;<b>'.$_POST['fam_parent'].' '.$_POST['name_parent'].' '.$_POST['pat_parent'].'</b></td>';
+    $html.='<td style="text-align: center;vertical-align: top" rowspan="2">Доступна оплата по QR-коду<br> через мобильное приложение и банкоматы банка</td>';
+    $html.='</tr>';
+
+    $html.='<tr>';
+    $html.='<td style="padding: 10px;" colspan="4" >Назначение: <b>№ О23/07 Оргвзнос участника Республиканской ';
+    $html.='<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;интернет-олимпиады по башкирскому языку</b></td>';
+    $html.='</tr>';
+
+    $html.='<tr>';
+    $html.='<td style="padding: 10px;" colspan="4">Ф.И.О. обучающегося:&nbsp;&nbsp;<b>'.$_POST['fam'].' '.$_POST['name'].' '.$_POST['pat'].'</b></td>';
+    $html.='</tr>';
+
+    $html.='<tr>';
+    $html.='<td colspan="4" style="padding-left: 10px;">';
+    $html.='<hr style="border: 2px solid black;margin-top: 5px;">';$html.='</td>';
+    $html.='</tr>';
+
+    $html.='<tr>';
+    $html.='<td colspan="4" style="padding-left: 10px;padding-bottom: 20px">';
+    $html.='<span style="padding-left: 10px"> Сумма платежа: 200 руб. 00__коп.                                 	«______»_____________________ 2023 г.</span>';
+    $html.='</td>';
+    $html.='</tr>';
+
+    $html.='</table>';
+
+
+   // echo $html;
+
+
+    $mpdf = new Mpdf(['mode' => 'ru-RU', 'format' => [230, 236]]);
+    $mpdf->WriteHTML($html);
+
+    if($save)
+    {
+        return $mpdf->Output("Квитанция.pdf",'S');
+    }
+    return $mpdf->Output("Квитанция_".$_POST['fam'].".pdf",'I');
+
+
+}
+
+
+function make_pdf_rec_old($data, $save = true){
+
+		/*$_POST=$data;
+		*/
 		$_POST['fam']='Саитгараев';
 		$_POST['name']='Ильназ';
 		$_POST['pat']='Наилевич';
 		$_POST['fam_parent']='Татлыбаева';
 		$_POST['name_parent']='Гулькай';
 		$_POST['pat_parent']='Нурисламовна';
-		$_POST['adress']='г.Мелеуз,ул.Акмуллы,16/А'; 
-		*/
+		$_POST['adress']='г.Мелеуз,ул.Акмуллы,16/А';
+
  		$html = '
 		<style>
 		body{font-size:10pt;font-family: Times New Roman;}
@@ -357,9 +471,9 @@ function make_pdf_rec($data, $save = true){
 		return $mpdf->Output('Квитанция.pdf',S);  */
 	}
 
-	function get_setting(){
-		return get_raw("SELECT * FROM `settings` LIMIT 1")[0];
-	}
+function get_setting(){
+    return get_raw("SELECT * FROM `settings` LIMIT 1")[0];
+}
 
 
   function file_get_contents_curl($url,$post_data)
