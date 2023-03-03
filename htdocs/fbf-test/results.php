@@ -2,7 +2,7 @@
 
 include '../functions.php';
 
-$students=get_raw("SELECT * FROM `students`");
+$students=get_raw("SELECT * FROM `students` ORDER by `fam`,`name`");
 echo '<b>РЕЗУЛЬТАТЫ</b> <br> (для обновления данных нажмите ctrl+r)<br><br>';
 echo '<table class="my_table">';
 echo '<tr>
