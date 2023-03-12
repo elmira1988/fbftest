@@ -42,7 +42,7 @@
 				<input name='pas' type="password" value='' />
 				<?php
 				/*if($_GET['test']==true)
-				{
+				{*/
 				?>
 				<div class='sendsubmit'></div>
 				<?php
