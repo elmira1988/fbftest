@@ -26,11 +26,11 @@
     <div class="sf_bgu">
 
 	<center>
-	<!--<div style="display: block;padding: 20px;">
-		<a href="https://fbftest.strbsu.ru/fbf-test/" style="padding: 10px;">
+	<div style="display: block;padding: 20px;">
+		<a href="/fbf-test/" style="padding: 10px;">
 			<button style="padding: 5px 10px;">перейти к тестированию</button>
 		</a>
-	</div>-->
+	</div>
     </center>
 
         <!--Wizard Container-->        
