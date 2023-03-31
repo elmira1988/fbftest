@@ -24,7 +24,7 @@
 <div id="rms-wizard" class="rms-wizard">
 
     <div class="sf_bgu">
-
+<!--
 	<center>
 	<div style="display: block;padding: 20px;">
 		<a href="/fbf-test/" style="padding: 10px;">
@@ -32,7 +32,7 @@
 		</a>
 	</div>
     </center>
-
+-->
         <!--Wizard Container-->        
             <div class="rms-container">
                <!--Wizard Header-->
@@ -82,12 +82,12 @@
             						</label>
             					</div>
             				</div>
-							
+							<!--
                             <span class="next">
                                 <p onclick="next_step(this)" class="btn">Далее
                                 </p>
                             </span>
-            				
+            				-->
                             <span class="prev" style="visibility:hidden;display:none;">
                                 <p onclick="prev_step(this)" class="btn" style="margin:0px;">Назад
                                 </p>
